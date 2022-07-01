@@ -3,6 +3,12 @@ import { ethers } from "ethers";
 import "./App.css";
 import abi from "./utils/WavePortal.json";
 
+const contractAddress = "0xB8082F9E3098f3D2069B69C29FAa35Cfb1db50a0";
+/**
+ * Create a variable here that references the abi content!
+ */
+const contractABI = abi.abi;
+
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
 
@@ -10,11 +16,6 @@ const App = () => {
    * All state property to store all waves
    */
   const [allWaves, setAllWaves] = useState([]);  
-  const contractAddress = "0xB8082F9E3098f3D2069B69C29FAa35Cfb1db50a0";
-  /**
-   * Create a variable here that references the abi content!
-   */
-  const contractABI = abi.abi;
 
   /*
    * Create a method that gets all waves from your contract
@@ -163,7 +164,6 @@ useEffect(() => {
       wavePortalContract.off("NewWave", onNewWave);
     }
   };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
   
