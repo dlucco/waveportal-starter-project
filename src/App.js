@@ -163,6 +163,7 @@ useEffect(() => {
       wavePortalContract.off("NewWave", onNewWave);
     }
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
   
@@ -171,13 +172,14 @@ useEffect(() => {
 
   useEffect(() => {
     checkIfWalletIsConnected();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <div className="mainContainer">
       <div className="dataContainer">
         <div className="header">
-        👋 Hello!
+        <span role="img" aria-label="waving hand">👋</span> Hello!
         </div>
 
         <div className="bio">
@@ -214,4 +216,4 @@ useEffect(() => {
   );
 }
 
-export default App
+export default App;
